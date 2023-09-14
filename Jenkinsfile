@@ -12,10 +12,15 @@ pipeline {
 		  // DOTNET_HOME = tool name: 'netsdk6', type: 'sdk'
           // DOTNET_ROOT = "${DOTNET_HOME}/.dotnet"
 		  //DOTNET_ROOT = tool name: 'netsdk6' , type: 'sdk'
-	   environment {
+	  // environment {
     // Set the path to the .NET SDK 6 installation
     PATH = "${tool name: 'netsdk6', type: 'SdkInstallation'}/bin:${env.PATH}"
+		   environment {
+    // Set the path to the .NET SDK 6 installation
+    PATH = tool name: 'netsdk6', type: 'SdkInstallation'
 }
+
+//}
 
 		  
 
@@ -49,7 +54,11 @@ pipeline {
                     bat "cd ${workspaceDir}"
                     //bat "${DOTNET_ROOT}\\dotnet publish -c Release -o ./publish"
 					  //bat 
-			bat "${PATH_TO_DOTNET_SDK}/dotnet publish -c Release -o ./publish"
+			//bat "${PATH_TO_DOTNET_SDK}/dotnet publish -c Release -o ./publish"
+			// Run the .NET Core build and publish commands using the configured SDK
+//bat "cd ${workspaceDir}"
+bat "dotnet publish -c Release -o ./publish"
+
 
 					
 					 // Copy the published files to the shared folder
