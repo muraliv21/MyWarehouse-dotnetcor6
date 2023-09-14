@@ -33,7 +33,9 @@ pipeline {
             steps {
                 // Checkout your source code from your repository
                 // For example, if using Git:
-				http://vagit.vitalaxis.com/vitalaxis/CloudOps/dotnetcore6webapplinux.git
+				// http://vagit.vitalaxis.com/vitalaxis/CloudOps/dotnetcore6webapplinux.git
+		    https://github.com/muraliv21/MyWarehouse-dotnetcor6.git
+					
                 checkout scm
             }
         }
@@ -62,7 +64,7 @@ pipeline {
 
 			C:\Program Files\dotnet
 
-			bat "\"C:\\Program Files\dotnet\" publish -c Release -o ./publish"
+			bat "\"C:\\Program Files\\dotnet\" publish -c Release -o ./publish"
 
 
 					
