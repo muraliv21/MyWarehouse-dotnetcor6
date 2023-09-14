@@ -14,7 +14,7 @@ pipeline {
 		  //DOTNET_ROOT = tool name: 'netsdk6' , type: 'sdk'
 	  // environment {
     // Set the path to the .NET SDK 6 installation
-    PATH = "${tool name: 'netsdk6', type: 'SdkInstallation'}/bin:${env.PATH}"
+    //PATH = "${tool name: 'netsdk6', type: 'SdkInstallation'}/bin:${env.PATH}"
 		   environment {
     // Set the path to the .NET SDK 6 installation
     PATH = tool name: 'netsdk6', type: 'SdkInstallation'
