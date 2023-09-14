@@ -15,10 +15,10 @@ pipeline {
 	  // environment {
     // Set the path to the .NET SDK 6 installation
     //PATH = "${tool name: 'netsdk6', type: 'SdkInstallation'}/bin:${env.PATH}"
-		   environment {
+		 //  environment {
     // Set the path to the .NET SDK 6 installation
-    PATH = tool name: 'netsdk6', type: 'SdkInstallation'
-}
+    //PATH = tool name: 'netsdk6', type: 'SdkInstallation'
+//}
 
 //}
 
@@ -57,7 +57,12 @@ pipeline {
 			//bat "${PATH_TO_DOTNET_SDK}/dotnet publish -c Release -o ./publish"
 			// Run the .NET Core build and publish commands using the configured SDK
 //bat "cd ${workspaceDir}"
-bat "dotnet publish -c Release -o ./publish"
+//bat "dotnet publish -c Release -o ./publish"
+			// bat "\"C:\\path\\to\\dotnet.exe\" publish -c Release -o ./publish"
+
+			C:\Program Files\dotnet
+
+			bat "\"C:\\Program Files\dotnet\" publish -c Release -o ./publish"
 
 
 					
