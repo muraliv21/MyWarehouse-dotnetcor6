@@ -1,7 +1,7 @@
 pipeline {
     agent any
     
-   environment {
+  // environment {
         // Use the globally defined .NET SDK location
        // DOTNET_ROOT = tool name:'netsdk6', type: 'sdk'
 		
@@ -11,7 +11,12 @@ pipeline {
 		 // .NET SDK = tool name: 'netsdk6', type: 'sdk'
 		  // DOTNET_HOME = tool name: 'netsdk6', type: 'sdk'
           // DOTNET_ROOT = "${DOTNET_HOME}/.dotnet"
-		  DOTNET_ROOT = tool name: 'netsdk6' , type: 'sdk'
+		  //DOTNET_ROOT = tool name: 'netsdk6' , type: 'sdk'
+	   environment {
+    // Set the path to the .NET SDK 6 installation
+    PATH = "${tool name: 'netsdk6', type: 'SdkInstallation'}/bin:${env.PATH}"
+}
+
 		  
 
 
@@ -43,7 +48,9 @@ pipeline {
                     // Run the .NET Core build and publish commands
                     bat "cd ${workspaceDir}"
                     //bat "${DOTNET_ROOT}\\dotnet publish -c Release -o ./publish"
-					  bat 
+					  //bat 
+			bat "${PATH_TO_DOTNET_SDK}/dotnet publish -c Release -o ./publish"
+
 					
 					 // Copy the published files to the shared folder
                     //def sharedFolderPath = "C:\\path\\to\\shared\\folder" // Update with your shared folder path
