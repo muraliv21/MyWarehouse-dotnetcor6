@@ -62,9 +62,11 @@ pipeline {
 //bat "dotnet publish -c Release -o ./publish"
 			// bat "\"C:\\path\\to\\dotnet.exe\" publish -c Release -o ./publish"
 
-			C:\Program Files\dotnet
+			//C:\Program Files\dotnet
 
 			bat "\"C:\\Program Files\\dotnet\" publish -c Release -o ./publish"
+
+			//bat "\"C:\\\\Program Files\\\\dotnet\\\\dotnet.exe\" publish -c Release -o ./publish"
 
 
 					
